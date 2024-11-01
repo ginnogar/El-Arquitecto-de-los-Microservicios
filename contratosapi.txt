@@ -1,0 +1,101 @@
+Contrato API: Microservicio de Productos
+1. Registro de Usuarios
+Ruta: POST /registro
+Descripción: Registra un nuevo usuario.
+Body:
+json
+{
+    "username": "nombre_usuario",
+    "password": "contrasena"
+}
+Respuestas:
+201: Usuario registrado.
+400: Error en los datos.
+500: Error en el registro.
+
+2. Login de Usuarios
+Ruta: POST /login
+Descripción: Autentica a un usuario y genera un token JWT.
+Body:
+json
+{
+    "username": "nombre_usuario",
+    "password": "contrasena"
+}
+Respuestas:
+200: Token JWT generado.
+400: Usuario no encontrado o contraseña incorrecta.
+
+3. Consulta de Productos
+Ruta: GET /productos
+Descripción: Obtiene todos los productos.
+Headers:
+Authorization: Bearer <token>
+Respuestas:
+200: Lista de productos.
+401: Acceso denegado.
+
+4. Crear un Nuevo Producto
+Ruta: POST /productos
+Descripción: Crea un nuevo producto.
+Body:
+json
+{
+    "nombre": "nombre_producto",
+    "descripcion": "descripcion_producto",
+    "precio": 10.00
+}
+Respuestas:
+201: Producto creado.
+400: Error en los datos.
+500: Error al crear el producto.
+
+5. Actualizar un Producto
+Ruta: PUT /productos/:id
+Descripción: Actualiza un producto existente.
+Params:
+id: ID del producto a actualizar.
+Body:
+json
+{
+    "nombre": "nuevo_nombre",
+    "descripcion": "nueva_descripcion",
+    "precio": 15.00
+}
+Respuestas:
+200: Producto actualizado.
+400: Error en los datos.
+404: Producto no encontrado.
+500: Error al actualizar el producto.
+
+Contrato API: Microservicio de Inventario
+1. Consulta de Todo el Inventario
+Ruta: GET /inventario
+Descripción: Obtiene todos los registros del inventario.
+Respuestas:
+200: Lista de inventario.
+2. Obtener Cantidad de Producto en Inventario
+Ruta: GET /inventario/:id
+Descripción: Obtiene la cantidad de un producto específico en el inventario.
+Params:
+id: ID del producto.
+Respuestas:
+200: Detalle del producto en inventario.
+404: Producto no encontrado.
+500: Error al obtener la cantidad de producto.
+
+3. Actualizar Producto del Inventario
+Ruta: PUT /inventario/:id
+Descripción: Actualiza la cantidad de un producto en el inventario.
+Params:
+id: ID del producto a actualizar.
+Body:
+json
+{
+    "cantidad": 10
+}
+Respuestas:
+200: Producto actualizado en el inventario.
+400: Error en los datos.
+404: Producto no encontrado.
+500: Error al actualizar el producto.

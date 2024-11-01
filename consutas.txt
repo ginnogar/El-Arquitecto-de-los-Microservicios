@@ -1,0 +1,15 @@
+{
+  "username": "Lucas",
+  "password": "123"
+}
+
+{
+  "nombre": "Producto C",
+  "descripcion": "Verde",
+  "precio": "4000"
+}
+
+{
+  "cantidad": "30"
+}
+

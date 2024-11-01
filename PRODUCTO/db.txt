@@ -1,0 +1,22 @@
+CREATE TABLE productos(
+	id SERIAL PRIMARY KEY,
+	nombre VARCHAR (50) NOT NULL,
+	descripcion TEXT NOT NULL,
+	precio NUMERIC NOT NULL
+);
+
+INSERT INTO productos (nombre, descripcion, precio) VALUES ('Producto A', 'Rojo', 1000);
+
+SELECT * FROM productos;
+
+UPDATE productos SET nombre, descripcion, precio WHERE id 
+
+CREATE TABLE usuarios (
+	id SERIAL PRIMARY KEY,
+	username VARCHAR(50) UNIQUE NOT NULL,
+	password VARCHAR(250) NOT NULL
+);
+
+INSERT INTO usuarios (username, password) VALUES ('Ginno', '123');
+
+SELECT * FROM usuarios;

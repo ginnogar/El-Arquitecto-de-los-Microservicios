@@ -1,0 +1,9 @@
+CREATE TABLE inventario(
+	id SERIAL PRIMARY KEY,
+	producto_id INT NOT NULL,
+	cantidad INT NOT NULL
+);
+
+SELECT * FROM inventario;
+
+INSERT INTO inventario (producto_id, cantidad) VALUES ( 1, 10);

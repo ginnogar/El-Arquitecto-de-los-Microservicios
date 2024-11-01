@@ -1,0 +1,11 @@
+DEPENDENCIAS
+
+Instala las dependencias en la carpeta inventario y producto.
+
+npm init -y
+npm install express pg bcryptjs amqplib jsonwebtoken
+ 
+
+Para acceder a Rabbit 
+Usuario y Contrasenha: guest
+http://127.0.0.1:15672/#/
